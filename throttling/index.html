@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Throttling In Javascript</h1>
+    <h2>Throttling used to call certain event once in defined time. First click will egt invoked quickly.</h2>
+
+    <button id="throttle">Click Me</button>
+    <script>
+        const btn = document.getElementById("throttle");
+
+        function throttle(fn, time) {
+            let prev = 0;
+            return (...args) => {
+                let now = new Date().getTime();
+
+                if(now-prev > time) {
+                    prev = now;
+
+                    return fn(...args);
+                }
+            }
+        }
+
+        btn.addEventListener("click", throttle(() => {
+                console.log("Function Called");
+            }, 1500))
+    </script>
+</body>
+</html>
