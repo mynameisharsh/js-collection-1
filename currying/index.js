@@ -1,4 +1,4 @@
- // Simple Currying
+ // Simple Currying With Closure
  function test (a) {
     return function test1(b){
         return function test2(c){
@@ -55,3 +55,16 @@ console.log("res2: ", res2)
 
 const res3= carriedFunc(_, _, _)(1)(_,3)(2);
 console.log("res3: ", res3)
+
+
+
+// Function currying with bind
+console.log("With Bind")
+const multiply = (x, y) => {
+    return x*y;
+}
+
+const multiPlyByTwo = multiply.bind(this, 2);
+
+const result = multiPlyByTwo(5);
+console.log("result", result);
