@@ -13,14 +13,21 @@
     </style>
 </head>
 <body>
-    <h1>Event Bubbling and Capturing</h1>
+    <h1>Event Delegation</h1>
     <h2></h2>
-
-    <div id="grandparent">
-        <div id="parent">
-            <div id="child"></div>
-        </div>
+    <div id="parent">
+        <li id="students">Students</li>
+        <li id="teachers">Teachers</li>
+        <li id="trainers">Trainers</li>
+        <li id="viewers">Viewers</li>
     </div>
+
+    <div id="form">
+        <input placeholder="Enter Name" data-uppercase />
+        <input placeholder="Enter Last Name"  />
+        <input placeholder="Enter Phone" />
+    </div>
+    
     <script src="./index.js" />
 </body>
 </html>
